@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Validation Example</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="phoneNumber">Phone Number:</label><br>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+        <span id="phoneError" class="error"></span><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+            document.getElementById('phoneError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+
+           
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            if (!phoneNumber) {
+                document.getElementById('phoneError').innerText = "Phone number must be entered.";
+                document.getElementById('phoneNumber').focus();
+                isValid = false;
+            } else if (isNaN(phoneNumber)) {
+                document.getElementById('phoneError').innerText = "Phone number must be a number.";
+                document.getElementById('phoneNumber').focus();
+                isValid = false;
+            }
+
+            const password = document.getElementById('password').value;
+            const minLength = 8;
+            if (!password) {
+                document.getElementById('passwordError').innerText = "Password must be entered.";
+                document.getElementById('password').focus();
+                isValid = false;
+            } else if (password.length < minLength) {
+                document.getElementById('passwordError').innerText = "Password must be longer than " + minLength + " characters.";
+                document.getElementById('password').focus();
+                isValid = false;
+            }
+
+            
+            return isValid;
+        }
+    </script>
+</body>
+</html>

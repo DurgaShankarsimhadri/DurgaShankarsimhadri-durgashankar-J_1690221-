@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Odd or Even</title>
+</head>
+<body>
+    <h2>Check if a Number is Odd or Even</h2>
+
+    <script>
+        const number = parseInt(prompt("Please enter a number:"));
+        if (!isNaN(number)) {
+            if (number % 2 === 0) {
+                alert(number + " is even.");
+            } else {
+                alert(number + " is odd.");
+            }
+        } else {
+            alert("Please enter a valid number.");
+        }
+    </script>
+</body>
+</html>

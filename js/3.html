@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Palindrome</title>
+</head>
+<body>
+    <h2>Check if a String is Palindrome</h2>
+    <p id="palindrome-result"></p>
+
+    <script>
+        function isPalindrome(str) {
+            const cleanedStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+            const reversedStr = cleanedStr.split('').reverse().join('');
+            return cleanedStr === reversedStr;
+        }
+
+        
+        const testString = "hello";
+        const result = isPalindrome(testString);
+        document.getElementById('palindrome-result').innerText = `Is "${testString}" a palindrome? ${result}`;
+    </script>
+</body>
+</html>

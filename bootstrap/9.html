@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .grid-item {
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Grid Layout</h1>
+    <div class="grid-container">
+        <div class="grid-item">
+            <h2>Section 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. In nisl nisi, scelerisque eu ultrices vitae, auctor ac massa.</p>
+        </div>
+        <div class="grid-item">
+            <h2>Section 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. In nisl nisi, scelerisque eu ultrices vitae, auctor ac massa.</p>
+        </div>
+        <div class="grid-item">
+            <h2>Section 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. In nisl nisi, scelerisque eu ultrices vitae, auctor ac massa.</p>
+        </div>
+        <div class="grid-item">
+            <h2>Section 4</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. In nisl nisi, scelerisque eu ultrices vitae, auctor ac massa.</p>
+        </div>
+    </div>
+</body>
+</html>

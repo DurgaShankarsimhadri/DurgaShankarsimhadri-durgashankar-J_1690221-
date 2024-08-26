@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Number Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Phone Number Validation</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="phoneNumber">Phone Number:</label><br>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br>
+        <span id="phoneError" class="error"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+          
+            document.getElementById('phoneError').innerText = '';
+
+   
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const phonePattern = /^(\d{3}[-.\s]\d{3}[-.\s]\d{4})$/;
+
+            if (!phoneNumber) {
+                document.getElementById('phoneError').innerText = "Phone number must be entered.";
+                document.getElementById('phoneNumber').focus();
+                isValid = false;
+            } else if (!phonePattern.test(phoneNumber)) {
+                document.getElementById('phoneError').innerText = "Phone number must be in the format xxx-xxx-xxxx, xxx.xxx.xxxx, or xxx xxx xxxx.";
+                document.getElementById('phoneNumber').focus();
+                isValid = false;
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transform Input Text</title>
+</head>
+<body>
+    <h2>Enter Text Below</h2>
+    <input type="text" id="inputText" onblur="transformText()">
+    <p id="outputText"></p>
+
+    <script>
+        function transformText() {
+            const input = document.getElementById('inputText').value;
+            const transformed = input.split('').reverse().join('');
+            document.getElementById('outputText').innerText = transformed;
+        }
+    </script>
+</body>
+</html>

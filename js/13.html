@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Current Time</title>
+</head>
+<body>
+    <h2>Current Time</h2>
+    <input type="text" id="timeTextbox" readonly>
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById('timeTextbox').value = timeString;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alert Messages and Prompts</title>
+</head>
+<body>
+    <h2>JavaScript Alert and Prompt Examples</h2>
+
+    <script>
+        const today = new Date();
+        alert("Today's date is: " + today.toDateString());
+
+      
+        const userName = prompt("Please enter your name:");
+        if (userName) {
+            alert("Hello, " + userName);
+        }
+
+  
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+        if (!isNaN(num1) && !isNaN(num2)) {
+            alert("The sum is: " + (num1 + num2));
+        } else {
+            alert("Please enter valid numbers.");
+        }
+    </script>
+</body>
+</html>

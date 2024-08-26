@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Password Validation Example</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validatePassword(password) {
+          
+            const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+
+            return passwordPattern.test(password);
+        }
+
+        function validateForm() {
+            let isValid = true;
+
+           
+            document.getElementById('passwordError').innerText = '';
+
+          
+            const password = document.getElementById('password').value;
+
+     
+            if (!validatePassword(password)) {
+                document.getElementById('passwordError').innerText = "Password must be 6-20 characters long, contain at least one numeric digit, one uppercase letter, and one lowercase letter.";
+                document.getElementById('password').focus();
+                isValid = false;
+            }
+
+         
+            return isValid;
+        }
+    </script>
+</body>
+</html>

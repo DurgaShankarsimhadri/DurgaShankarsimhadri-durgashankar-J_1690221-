@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Validation Example</h2>
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="memberNumber">Member Number:</label><br>
+        <input type="text" id="memberNumber" name="memberNumber"><br>
+        <span id="memberError" class="error"></span><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <span id="passwordError" class="error"></span><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+
+      
+            document.getElementById('memberError').innerText = '';
+            document.getElementById('passwordError').innerText = '';
+
+          
+            const memberNumber = document.getElementById('memberNumber').value;
+            if (!memberNumber) {
+                alert("Member number must be entered.");
+                document.getElementById('memberNumber').focus();
+                isValid = false;
+            } else if (isNaN(memberNumber)) {
+                alert("Member number must be a number.");
+                document.getElementById('memberNumber').focus();
+                isValid = false;
+            }
+
+ 
+            const password = document.getElementById('password').value;
+            if (!password) {
+                alert("Password must be entered.");
+                document.getElementById('password').focus();
+                isValid = false;
+            } else if (password.length <= 4) {
+                alert("Password must be longer than 4 characters.");
+                document.getElementById('password').focus();
+                isValid = false;
+            }
+
+       
+            return isValid;
+        }
+    </script>
+</body>
+</html>
